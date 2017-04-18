@@ -19,6 +19,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ServiceLoader;
+
+import com.wso2telco.dep.reportingservice.ReportingExtension;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.wso2.carbon.apimgt.api.APIManagementException;
@@ -73,7 +76,19 @@ public class WorkflowDAO {
      * @throws Exception the exception
      */
     public void saveSubscriptionChargeRate(String appId, String apiId, String opName) throws Exception {
-        Connection conn = null;
+
+        try {
+            // Calls all the classes which implements ReportingExtension interface
+            ServiceLoader<ReportingExtension> loader = ServiceLoader.load(ReportingExtension.class);
+            for (ReportingExtension extn : loader) {
+                extn.report(appId, apiId, opName);
+            }
+        } catch (Exception e) {
+            handleException("Error in Creating subscription charge rate : " + e.getMessage(), e);
+        }
+
+
+        /*Connection conn = null;
         ResultSet rs = null;
         PreparedStatement ps = null;
         try {
@@ -103,7 +118,7 @@ public class WorkflowDAO {
             handleException("Error in Creating subscription charge rate : " + e.getMessage(), e);
         } finally {
             DbUtils.closeAllConnections(ps, conn, rs);
-        }
+        }*/
     }
 
     /**
