@@ -19,6 +19,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
+
+import com.wso2telco.dep.reportingservice.publishing.WorkflowDataPublisher;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.mozilla.javascript.Context;
@@ -158,6 +160,10 @@ public class WorkflowHostObject extends ScriptableObject {
             try {
                 WorkflowDAO WorkflowDAO = new WorkflowDAO();
                 WorkflowDAO.saveSubscriptionChargeRate(appId, apiId, opName);
+
+                // Publish to outside
+                WorkflowDataPublisher.publish(appId, apiId, opName);
+
                 status = CONST_SUCCESS;
             } catch (Exception e) {
                 status = CONST_FAILURE;
