@@ -14,13 +14,13 @@
  * limitations under the License.
  */
 
-package com.wso2telco.services.bw;
+package com.wso2telco.dep.rest.api.manage;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.wso2telco.core.dbutils.exception.BusinessException;
 import com.wso2telco.core.msisdnvalidator.InvalidMSISDNException;
-import com.wso2telco.dep.bw.model.RequestError;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.model.RequestError;
 import com.wso2telco.dep.operatorservice.model.BlackListDTO;
 import com.wso2telco.dep.operatorservice.model.MSISDNSearchDTO;
 import com.wso2telco.dep.operatorservice.model.ProvisionReq;
@@ -28,12 +28,12 @@ import com.wso2telco.dep.operatorservice.model.WhiteListDTO;
 import com.wso2telco.dep.operatorservice.service.BlackListWhiteListService;
 import com.wso2telco.dep.operatorservice.service.OparatorService;
 import com.wso2telco.dep.operatorservice.util.APIError;
-import com.wso2telco.services.bw.entity.BlackList;
-import com.wso2telco.services.bw.entity.BlackListBulk;
-import com.wso2telco.services.bw.entity.Id;
-import com.wso2telco.services.bw.entity.RemoveRequest;
-import com.wso2telco.services.bw.entity.WhiteList;
-import com.wso2telco.services.bw.entity.WhiteListBulk;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity.BlackList;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity.BlackListBulk;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity.Id;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity.RemoveRequest;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity.WhiteList;
+import com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity.WhiteListBulk;
 import org.apache.log4j.Logger;
 
 import javax.ws.rs.Consumes;
@@ -50,12 +50,11 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collections;
 import java.util.List;
-import java.util.StringTokenizer;
 
 @Path("/queries")
-public class Queries {
+public class BlacklistWhitelistApi {
 
-	private static final Logger LOG = Logger.getLogger(Queries.class.getName());
+	private static final Logger LOG = Logger.getLogger(BlacklistWhitelistApi.class.getName());
 	@Context
 	private UriInfo context;
 

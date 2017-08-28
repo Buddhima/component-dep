@@ -14,16 +14,29 @@
  * limitations under the License.
  */
 
-package com.wso2telco.services.bw.entity;
+package com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw;
 
-public class Id {
-	private String id;
-
-	public String getId() {
-		return id;
+public class Exp {
+	public static void main(String[] args) {
+		try {
+			doIt();
+		} catch (Exception e) {
+			System.out.println("CAUGHT");
+		}
 	}
-
-	public void setId(String id) {
-		this.id = id;
+	
+	private static void doIt() {
+		try {
+			System.out.println("Aaaaaaaaa");
+			int i = 0;
+			Integer j = null;
+			i = j;
+		} catch (Exception e) {
+			System.out.println("bbbbbbbbbbb");
+			throw e;
+		} finally {
+			System.out.println("ccccccccc");
+			return;
+		}
 	}
 }

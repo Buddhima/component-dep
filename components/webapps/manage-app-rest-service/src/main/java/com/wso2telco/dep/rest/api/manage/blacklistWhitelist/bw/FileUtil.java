@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wso2telco.services.bw;
+package com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw;
 
 import java.io.BufferedWriter;
 
@@ -31,11 +31,6 @@ import java.io.FileOutputStream;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.util.*;
-
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.servlet.http.HttpServletRequest;
-import org.apache.commons.fileupload.FileItem;
 
 /**
  * @version $Id: FileUtil.java,v 1.00.000

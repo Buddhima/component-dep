@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.wso2telco.dep.bw.model;
+package com.wso2telco.dep.rest.api.manage.blacklistWhitelist.model;
 
 import com.wso2telco.core.dbutils.exception.ThrowableError;
 

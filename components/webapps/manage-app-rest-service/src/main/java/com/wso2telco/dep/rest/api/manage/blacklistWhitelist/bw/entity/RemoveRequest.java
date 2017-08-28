@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wso2telco.services.bw.entity;
+package com.wso2telco.dep.rest.api.manage.blacklistWhitelist.bw.entity;
 
 import java.io.Serializable;
 
