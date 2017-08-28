@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.wso2telco.aggregatorblacklist.model;
+package com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.model;
 
 
 // TODO: Auto-generated Javadoc

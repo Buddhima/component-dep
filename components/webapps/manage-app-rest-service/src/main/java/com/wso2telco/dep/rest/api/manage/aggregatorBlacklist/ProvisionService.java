@@ -14,10 +14,10 @@
  * limitations under the License.
  */
 
-package com.wso2telco.aggregatorblacklist;
+package com.wso2telco.dep.rest.api.manage.aggregatorBlacklist;
 
-import com.wso2telco.aggregatorblacklist.model.ProvisionReq;
-import com.wso2telco.aggregatorblacklist.dao.ProvisionDAO;
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.model.ProvisionReq;
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.dao.ProvisionDAO;
 import com.wso2telco.dep.operatorservice.model.OperatorSearchDTO;
 import com.wso2telco.dep.operatorservice.service.OparatorService;
 

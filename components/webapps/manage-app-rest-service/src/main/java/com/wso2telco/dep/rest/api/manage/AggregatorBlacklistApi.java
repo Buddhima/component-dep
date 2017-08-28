@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.wso2telco.aggregatorblacklist;
+package com.wso2telco.dep.rest.api.manage;
 
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
@@ -23,11 +23,12 @@ import javax.ws.rs.core.Context;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.ProvisionService;
 import org.apache.log4j.Logger;
 
-import com.wso2telco.aggregatorblacklist.model.ErrorReturn;
-import com.wso2telco.aggregatorblacklist.model.ProvisionReq;
-import com.wso2telco.aggregatorblacklist.model.RequestError;
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.model.ErrorReturn;
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.model.ProvisionReq;
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.model.RequestError;
 import com.wso2telco.core.dbutils.exception.BusinessException;
 import com.google.gson.Gson;
 
@@ -36,11 +37,11 @@ import com.google.gson.Gson;
 /**
  * The Class Queries.
  */
-@Path("/")
-public class Queries {
+@Path("/merchant")
+public class AggregatorBlacklistApi {
 
     /** The Constant LOG. */
-    private static final Logger LOG = Logger.getLogger(Queries.class.getName());
+    private static final Logger LOG = Logger.getLogger(AggregatorBlacklistApi.class.getName());
     
     /** The context. */
     @Context
@@ -50,7 +51,7 @@ public class Queries {
     /**
      * Instantiates a new queries.
      */
-    public Queries() {
+    public AggregatorBlacklistApi() {
     }
 
     /**
@@ -60,7 +61,7 @@ public class Queries {
      * @return the response
      */
     @POST
-    @Path("/merchant/blacklist")
+    @Path("/blacklist")
     @Consumes("application/json")
     @Produces("application/json")
     public Response merchantinsert(String jsonData) {

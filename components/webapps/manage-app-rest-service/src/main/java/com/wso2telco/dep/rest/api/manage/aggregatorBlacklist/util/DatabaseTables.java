@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wso2telco.aggregatorblacklist.util;
+package com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.util;
 
 public enum DatabaseTables
 {

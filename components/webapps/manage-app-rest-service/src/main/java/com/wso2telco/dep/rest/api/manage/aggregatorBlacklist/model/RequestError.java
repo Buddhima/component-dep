@@ -13,33 +13,43 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  ******************************************************************************/
-package com.wso2telco.aggregatorblacklist.model;
-
+package com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.model;
 
 // TODO: Auto-generated Javadoc
 /**
- * The Class ProvisionReq.
+ * The Class RequestError.
  */
-public class ProvisionReq {
+public class RequestError{
 
-    /** The provisioninfo. */
-    private ProvisionInfo provisioninfo;
+    /** The errorreturn. */
+    private ErrorReturn errorreturn;
 
     /**
-     * Gets the provisioninfo.
+     * Instantiates a new request error.
      *
-     * @return the provisioninfo
+     * @param errorreturn the errorreturn
      */
-    public ProvisionInfo getProvisioninfo() {
-        return provisioninfo;
+    public RequestError(ErrorReturn errorreturn) {
+        this.errorreturn = errorreturn;
+    }
+        
+    /**
+     * Gets the errorreturn.
+     *
+     * @return the errorreturn
+     */
+    public ErrorReturn getErrorreturn() {
+        return errorreturn;
     }
 
     /**
-     * Sets the provisioninfo.
+     * Sets the errorreturn.
      *
-     * @param provisioninfo the new provisioninfo
+     * @param errorreturn the new errorreturn
      */
-    public void setProvisioninfo(ProvisionInfo provisioninfo) {
-        this.provisioninfo = provisioninfo;
+    public void setErrorreturn(ErrorReturn errorreturn) {
+        this.errorreturn = errorreturn;
     }
+
+    
 }

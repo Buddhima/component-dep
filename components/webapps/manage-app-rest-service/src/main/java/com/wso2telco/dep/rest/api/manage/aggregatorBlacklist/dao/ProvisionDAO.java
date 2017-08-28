@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.wso2telco.aggregatorblacklist.dao;
+package com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -25,7 +25,7 @@ import java.sql.Types;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 
-import com.wso2telco.aggregatorblacklist.util.DatabaseTables;
+import com.wso2telco.dep.rest.api.manage.aggregatorBlacklist.util.DatabaseTables;
 import com.wso2telco.core.dbutils.DbUtils;
 import com.wso2telco.core.dbutils.util.DataSourceNames;
 
