@@ -405,6 +405,11 @@
                 <version>${org.wso2.carbon.apimgt.version}</version>
             </dependency>
             <dependency>
+                <groupId>org.wso2.carbon.apimgt</groupId>
+                <artifactId>org.wso2.carbon.apimgt.rest.api.util</artifactId>
+                <version>${org.wso2.carbon.apimgt.version}</version>
+            </dependency>
+            <dependency>
                 <groupId>commons-io.wso2</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.wso2.version}</version>
