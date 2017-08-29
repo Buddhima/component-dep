@@ -30,6 +30,14 @@
 		<jaxrs:serviceBeans>
 			<ref bean="queriesBean"/>
 		</jaxrs:serviceBeans>
+		<jaxrs:providers>
+			<bean class="org.codehaus.jackson.jaxrs.JacksonJsonProvider"/>
+			<bean class="org.wso2.carbon.apimgt.rest.api.util.exception.GlobalThrowableMapper" />
+		</jaxrs:providers>
+		<jaxrs:properties>
+			<!-- This is added to catch interceptor level exceptions in GlobalThrowableMapper. -->
+			<entry key="map.cxf.interceptor.fault" value="true" />
+		</jaxrs:properties>
 	</jaxrs:server>
 
 	<bean id="queriesBean" class="com.wso2telco.services.qs.Queries"/>
