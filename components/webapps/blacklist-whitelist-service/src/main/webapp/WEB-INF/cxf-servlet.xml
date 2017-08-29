@@ -20,6 +20,7 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:cxf="http://cxf.apache.org/core"
 	xsi:schemaLocation="http://www.springframework.org/schema/beans
 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
@@ -30,5 +31,13 @@
 		</jaxrs:serviceBeans>
 	</jaxrs:server>
 	
-	<bean id="queriesBean" class="com.wso2telco.services.bw.Queries"/> 
+	<bean id="queriesBean" class="com.wso2telco.services.bw.Queries"/>
+
+	<bean id="AuthenticationInterceptor" class="org.wso2.carbon.apimgt.rest.api.util.interceptors.auth.BasicAuthenticationInterceptor" />
+
+	<cxf:bus>
+		<cxf:inInterceptors>
+			<ref bean="AuthenticationInterceptor"/>
+		</cxf:inInterceptors>
+	</cxf:bus>
 </beans>

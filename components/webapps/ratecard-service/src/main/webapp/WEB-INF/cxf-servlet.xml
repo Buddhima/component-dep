@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <!--
 ~ Copyright (c) 2016, WSO2.Telco Inc. (http://www.wso2telco.com) All Rights Reserved.
 ~
@@ -15,6 +16,7 @@
 ~ limitations under the License.
 ~
 -->
+
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:jaxrs="http://cxf.apache.org/jaxrs"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -23,14 +25,6 @@
 	http://www.springframework.org/schema/beans/spring-beans-2.0.xsd
 		http://cxf.apache.org/jaxrs http://cxf.apache.org/schemas/jaxrs.xsd">
 	
-	<jaxrs:server id="analyticsServices" address="/">
-		<jaxrs:serviceBeans>
-			<ref bean="queriesBean"/>
-		</jaxrs:serviceBeans>
-	</jaxrs:server>
-	
-	<bean id="queriesBean" class="com.wso2telco.aggregatorblacklist.Queries"/>
-
 	<bean id="AuthenticationInterceptor" class="org.wso2.carbon.apimgt.rest.api.util.interceptors.auth.BasicAuthenticationInterceptor" />
 
 	<cxf:bus>
